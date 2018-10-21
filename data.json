@@ -1,0 +1,173 @@
+{
+    "https://doi.org/10.7910/DVN/KF4VRD": {
+        "@context": "http://schema.org",
+        "@type": "Dataset",
+        "identifier": "https://doi.org/10.7910/DVN/KF4VRD",
+        "name": "ICRF mode conversion in three-ion species heating experiment and in flow drive experiment on the Alcator C-Mod tokamak",
+        "author": [
+            {
+                "name": "Y. Lin, S.J. Wukitch, E. Edlund, P. Ennever, A. E. Hubbard, M. Porkolab, J. Rice, J. Wright"
+            }
+        ],
+        "datePublished": "2018-10-04",
+        "dateModified": "2018-10-04",
+        "version": "1",
+        "description": "In recent three-ion species (majority D and H plus a trace level of 3He) ICRF heating experiments on Alcator C-Mod, double mode conversion on both sides of the 3He cyclotron resonance has been observed using the phase contrast imaging (PCI) system. The MC locations are used to estimate the species concentrations in the plasma. Simulation using TORIC shows that with the 3He level &lt;1%, most RF power is absorbed by the 3He ions and the process can generate energetic 3He ions. In mode conversion (MC) flow drive experiment in D(3He) plasma at 8 T, MC waves were also monitored by PCI. The MC ion cyclotron wave (ICW) amplitude and wavenumber kR have been found to correlate with the flow drive force. The MC efficiency, wave-number k of the MC ICW and their dependence on plasma parameters like Te0 have been studied. Based on the experimental observation and numerical study of the dispersion solutions, a hypothesis of the flow drive mechanism has been proposed.",
+        "keywords": [
+            "Physics",
+            "energetic 3He ions",
+            "flow drive",
+            "ICRF mode conversion",
+            "PCI",
+            "three-ion species"
+        ],
+        "schemaVersion": "https://schema.org/version/3.3",
+        "license": {
+            "@type": "Dataset"
+        },
+        "includedInDataCatalog": {
+            "@type": "DataCatalog",
+            "name": "Harvard Dataverse",
+            "url": "https://dataverse.harvard.edu"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Dataverse"
+        }
+    },
+    "http://dx.doi.org/10.7910/DVN/24060": {
+        "@context": "http://schema.org",
+        "@type": "Dataset",
+        "identifier": "http://dx.doi.org/10.7910/DVN/24060",
+        "name": "Slow ionized wind and rotating disklike system associated with the high-mass young stellar object G345.4938+01.4677",
+        "author": [
+            {
+                "name": "Guzman, Andres E.",
+                "affiliation": "DAs-UChile / CfA"
+            },
+            {
+                "name": "Garay, Guido",
+                "affiliation": "DAs-UChile"
+            },
+            {
+                "name": "Rodriguez, Luis F.",
+                "affiliation": "CRyA-UNAM"
+            },
+            {
+                "name": "Moran, James",
+                "affiliation": "CfA"
+            },
+            {
+                "name": "Brooks, Kate J.",
+                "affiliation": "CASS"
+            },
+            {
+                "name": "Bronfman, Leonardo",
+                "affiliation": "DAs-UChile"
+            },
+            {
+                "name": "Nyman, Lars-Ake",
+                "affiliation": "JAO"
+            },
+            {
+                "name": "Sanhueza, Patricio",
+                "affiliation": "BU"
+            },
+            {
+                "name": "Mardones, Diego",
+                "affiliation": "DAs-UChile"
+            }
+        ],
+        "datePublished": "2014-05-07",
+        "dateModified": "2014-09-30",
+        "version": "3",
+        "description": "We report the detection, made using ALMA, of the 92 GHz continuum and hydrogen recombination lines (HRLs) H40$\\alpha$, H42$\\alpha$, and H50$\\beta$ emission toward the ionized wind associated with the high-mass young stellar object G345.4938+01.4677. This is the luminous central dominating source located in the massive and dense molecular clump associated with IRAS 16562$-$3959. The HRLs exhibit Voigt profiles, a strong signature of Stark broadening. We successfully reproduce the observed continuum and HRLs simultaneously using a simple model of a slow ionized wind in local thermodynamic equilibrium, with no need a high-velocity component. The Lorentzian line wings imply electron densities of $5\\times10^7$~cm$^{-3}$ on average. In addition, we detect SO and SO$_2$ emission arising from a compact ($\\sim3000$~AU) molecular core associated with the central young star. The molecular core exhibits a velocity gradient perpendicular to the jet-axis, which we interpret as evidence of rotation. The set of observations toward G345.4938+01.4677 are consistent with it being a young high-mass star associated with a slow photo-ionized wind.",
+        "keywords": [
+            "Astronomy and Astrophysics",
+            "ISM: jets and outflows --- radio continuum: stars --- stars: formation --- IRAS 16562$-$3959 --- G345.4938+01.4677"
+        ],
+        "schemaVersion": "https://schema.org/version/3.3",
+        "license": {
+            "@type": "Dataset",
+            "text": "CC0",
+            "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        "includedInDataCatalog": {
+            "@type": "DataCatalog",
+            "name": "Harvard Dataverse",
+            "url": "https://dataverse.harvard.edu"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Dataverse"
+        }
+    },
+    "http://dx.doi.org/10.7910/DVN/23099": {
+        "@context": "http://schema.org",
+        "@type": "Dataset",
+        "identifier": "http://dx.doi.org/10.7910/DVN/23099",
+        "name": "Atlas of Quasar Energy Distributions - Digital Datasets",
+        "author": [
+            {
+                "name": "McDowell, Jonathan C.",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Elvis, Martin",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Wilkes, Belinda J.",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Green, Richard F.",
+                "affiliation": "NOAO"
+            },
+            {
+                "name": "Bechtold, Jill",
+                "affiliation": "University of Arizona"
+            },
+            {
+                "name": "Willner, Steven P.",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Oey, M.S.",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Polomski, Elisha",
+                "affiliation": "Harvard-Smithsonian Center for Astrophysics"
+            },
+            {
+                "name": "Cutri, Roc",
+                "affiliation": "University of Arizona"
+            }
+        ],
+        "datePublished": "2013-10-29",
+        "dateModified": "2013-10-28",
+        "version": "1",
+        "description": "Tables and supplementary material from the Atlas of Quasar Energy Distributions, including tabulated estimates for median and quantile SEDs, given as log (nu Lnu) vs log(nu), for the sample of quasars. The SEDs are in the 'med' subdirectory. You probably want to start with 'med/MED.Median' which gives the median SED for the sample in log (nu Lnu) vs log(nu) normalized at 1.5 microns.",
+        "keywords": [
+            "Astronomy and Astrophysics",
+            "Quasar, spectral energy distribution"
+        ],
+        "citation": [
+            "1994ApJS...95....1E  Elvis, M, et al 1994, Atlas of Quasar Energy Distributions,   Astrophysical Journal Suppl. 95, 1."
+        ],
+        "schemaVersion": "https://schema.org/version/3.3",
+        "license": {
+            "@type": "Dataset"
+        },
+        "includedInDataCatalog": {
+            "@type": "DataCatalog",
+            "name": "Harvard Dataverse",
+            "url": "https://dataverse.harvard.edu"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Dataverse"
+        }
+    }
+}

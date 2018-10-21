@@ -2,10 +2,10 @@ from HarvardSpider import *
 
 def main():
     delay = 25
-    baseURL = "https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=metadataSource%3A%22Harvard+Dataverse%22&types=dataverses%3Adatasets&sort=dateSort&order=desc&page="
-    spider = HarvardSpider(baseURL, delay)
+    baseURL = "https://dataverse.harvard.edu"
+    spider = HarvardSpider(baseURL, delay, "data.json")
 
-    spider.crawl(2)
+    spider.crawl(1)
 
 if __name__ == '__main__':
     main()
