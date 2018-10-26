@@ -29,7 +29,7 @@ class Spider:
     
     def writeToFile(self, fileName):
         with open(fileName, "w") as writeFile:
-            json.dump(self.datasets, writeFile)
+            json.dump(self.datasets, writeFile, ensure_ascii=False)
     
 
 

@@ -14,8 +14,14 @@ class HarvardSpider(Spider):
         start = 0
         
         # Loading already scaped dataset dictonary from json file
-        with open(self.fileName) as data_file:
-            self.datasets = json.load(data_file)
+        try:
+            with open(self.fileName) as data_file:
+                try:
+                    self.datasets = json.load(data_file)
+                except ValueError:
+                    self.datasets = dict()
+        except FileNotFoundError:
+            self.datasets = dict()
 
         while curCount < maxDatasets:
 
@@ -26,14 +32,18 @@ class HarvardSpider(Spider):
            
             # Reading in all datasets from one response(MAX : 10 )
             for row in data['data']['items']:
+
+                print("In Inner Loop"+ "\n\n")
+
                 dataset_url = row['url']
 
                 if(row['type'] == 'dataset'):
                     meta_data = super().extract_metadata(dataset_url)
                    
                     #adding dataset to hashMap
-                    self.datasets[meta_data['json-ld'][0]['identifier']] = meta_data['json-ld'][0]
-                    pp.pprint(meta_data)
+                    if(len(meta_data['json-ld']) > 0):
+                        self.datasets[meta_data['json-ld'][0]['identifier']] = meta_data['json-ld'][0]
+                        pp.pprint(meta_data)
                     curCount += 1
                     if(curCount == maxDatasets):
                         break
