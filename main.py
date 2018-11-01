@@ -1,10 +1,12 @@
 from HarvardSpider import *
+from FigShareSpider import *
+from OmicsdiSpider import *
 
 def main():
-    delay = 25
-    maxDatasets = 1
-    baseURL = "https://dataverse.harvard.edu"
-    spider = HarvardSpider(baseURL, delay, "data.json")
+    delay = 15
+    maxDatasets = 20
+    baseURL = "https://www.omicsdi.org"
+    spider = OmicsdiSpider(baseURL, delay, "omsciData.json")
 
     spider.crawl(maxDatasets)
 

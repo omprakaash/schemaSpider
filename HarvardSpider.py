@@ -14,14 +14,7 @@ class HarvardSpider(Spider):
         start = 0
         
         # Loading already scaped dataset dictonary from json file
-        try:
-            with open(self.fileName) as data_file:
-                try:
-                    self.datasets = json.load(data_file)
-                except ValueError:
-                    self.datasets = dict()
-        except FileNotFoundError:
-            self.datasets = dict()
+        self.loadDataFromFile()
 
         while curCount < maxDatasets:
 
@@ -41,10 +34,12 @@ class HarvardSpider(Spider):
                     meta_data = super().extract_metadata(dataset_url)
                    
                     #adding dataset to hashMap
-                    if(len(meta_data['json-ld']) > 0):
-                        self.datasets[meta_data['json-ld'][0]['identifier']] = meta_data['json-ld'][0]
+                    if(self.cacheDataset(meta_data)):
+                        curCount += 1
                         pp.pprint(meta_data)
-                    curCount += 1
+                    else:
+                        print("Skipping Dataset due to json format error/ No metadata present")
+
                     if(curCount == maxDatasets):
                         break
 
@@ -56,4 +51,4 @@ class HarvardSpider(Spider):
             print(start)
 
          # Write to File
-        self.writeToFile(self.fileName)
+        self.writeCacheToFile()
