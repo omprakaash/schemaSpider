@@ -3,8 +3,7 @@ from Spider import *
 class HarvardSpider(Spider):
 
     def __init__(self, baseURL, delay, fileName):
-        super().__init__(baseURL, delay)
-        self.fileName = fileName
+        super().__init__(baseURL, delay, fileName)
 
     def crawl(self, maxDatasets):
 

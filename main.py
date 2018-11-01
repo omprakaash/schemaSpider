@@ -1,12 +1,13 @@
 from HarvardSpider import *
 from FigShareSpider import *
 from OmicsdiSpider import *
+from ZenodoSpider import *
 
 def main():
     delay = 15
-    maxDatasets = 20
-    baseURL = "https://www.omicsdi.org"
-    spider = OmicsdiSpider(baseURL, delay, "omsciData.json")
+    maxDatasets = 4
+    baseURL = "https://zenodo.org/api"
+    spider = ZenodoSpider(baseURL, delay, "ZenodoData.json")
 
     spider.crawl(maxDatasets)
 

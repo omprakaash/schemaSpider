@@ -2,9 +2,8 @@ from Spider import *
 
 class FigShareSpider(Spider):
     def __init__(self, baseUrl, delay,  fileName):
-        super().__init__(baseUrl, delay)
-        self.fileName = fileName
-    
+        super().__init__(baseUrl, delay, fileName)
+           
     def crawl(self, maxDatasets):
         # setting up tracking variables
         rowsPerPage = 10
