@@ -5,7 +5,7 @@ import json
 # Script to format the data to match ElasticSearch BULk API input specification 
 def main():
 
-    with open('ZenodoData.json') as src:
+    with open('DryadData.json') as src:
         data = json.load(src)
 
     datasets = []

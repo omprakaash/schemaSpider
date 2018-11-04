@@ -1,27 +1,25 @@
 from Spider import *
 
-class ZenodoSpider(Spider):
+class DataDryadSpider(Spider):
     def __init__(self, baseUrl, delay, fileName):
         super().__init__(baseUrl, delay, fileName)
-    
+
     def crawl(self, maxDatasets):
 
-        count = 0
         curPage = 1
-        datasetsPerPage = 20
+        datasetsPerPage = 2
+        count = 0
 
-        super().loadDataFromFile()
+        while count < maxDatasets:
 
-        while(count < maxDatasets):
-
-            url = self.baseURL + "/records/?size=" + str(datasetsPerPage) + "&page=" + str(curPage) + "&type=dataset"
+            url = self.baseURL + "/works?page[size]=" + str(datasetsPerPage) + "&page[number]=" + str(curPage) + "&data-center-id=dryad.dryad"
             response = requests.get(url)
             jsonData = response.json()
 
-            datasetList = jsonData['hits']['hits']
+            datasetList = jsonData["data"]
 
             for dataset in datasetList:
-                datasetURL = dataset['links']['html']
+                datasetURL = dataset['attributes']['url']
                 metaData = self.extract_metadata(datasetURL)
 
                 if(self.cacheDataset(metaData)):
@@ -34,14 +32,8 @@ class ZenodoSpider(Spider):
                     break
 
                 time.sleep(self.delay)
-            
+
             curPage += 1
 
         # Write cache to File
         self.writeCacheToFile()
-       
-
-
-        
-
-        
