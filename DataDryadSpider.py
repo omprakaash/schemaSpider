@@ -1,13 +1,14 @@
 from Spider import *
 
 class DataDryadSpider(Spider):
-    def __init__(self, baseUrl, delay, fileName):
-        super().__init__(baseUrl, delay, fileName)
+    def __init__(self, delay, fileName):
+        super().__init__(delay, fileName)
+        self.baseURL = "https://api.datacite.org"
 
     def crawl(self, maxDatasets):
 
-        curPage = 1
-        datasetsPerPage = 2
+        curPage = 30
+        datasetsPerPage = 10
         count = 0
 
         while count < maxDatasets:
@@ -23,11 +24,12 @@ class DataDryadSpider(Spider):
                 metaData = self.extract_metadata(datasetURL)
 
                 if(self.cacheDataset(metaData)):
-                    count += 1
-                    pp.pprint(metaData)
+                    print('Dryad New Dataset Added : Total :' + str(count) )
                 else:
-                    print("\n\nSkipping Dataset - No metadata present\n\n")
+                    print("\n\nSkipping Dataset - No metadata present [DataDryad] : Total : " + str(count) + "\n\n")
             
+                count += 1
+
                 if(count == maxDatasets):
                     break
 

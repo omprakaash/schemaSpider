@@ -2,8 +2,9 @@ from Spider import *
 
 class HarvardSpider(Spider):
 
-    def __init__(self, baseURL, delay, fileName):
-        super().__init__(baseURL, delay, fileName)
+    def __init__(self, delay, fileName):
+        super().__init__(delay, fileName)
+        self.baseURL = "https://dataverse.harvard.edu"
 
     def crawl(self, maxDatasets):
 
@@ -20,7 +21,7 @@ class HarvardSpider(Spider):
             url = self.baseURL + '/api/search?q=*&fq=metadataSource:"Harvard Dataverse"' + '&type=dataset' + "&start="  + str(start) 
             response = requests.get(url)
             data = response.json()
-            pp.pprint(data)
+            #pp.pprint(data)
            
             # Reading in all datasets from one response(MAX : 10 )
             for row in data['data']['items']:
@@ -34,10 +35,13 @@ class HarvardSpider(Spider):
                    
                     #adding dataset to hashMap
                     if(self.cacheDataset(meta_data)):
-                        curCount += 1
-                        pp.pprint(meta_data)
+                        pass
                     else:
-                        print("Skipping Dataset due to json format error/ No metadata present")
+                        print("Skipping Dataset due to json format error/ No metadata present [ Harvard ] ")
+
+                        
+                    print("Harvard: " + str(curCount) )
+                    curCount += 1
 
                     if(curCount == maxDatasets):
                         break
@@ -47,7 +51,7 @@ class HarvardSpider(Spider):
 
             # Page offset
             start += rows
-            print(start)
+            #print(start)
 
          # Write to File
         self.writeCacheToFile()

@@ -1,8 +1,9 @@
 from Spider import *
 
 class ZenodoSpider(Spider):
-    def __init__(self, baseUrl, delay, fileName):
-        super().__init__(baseUrl, delay, fileName)
+    def __init__(self, delay, fileName):
+        super().__init__(delay, fileName)
+        self.baseURL = "https://zenodo.org/api"
     
     def crawl(self, maxDatasets):
 
@@ -26,9 +27,9 @@ class ZenodoSpider(Spider):
 
                 if(self.cacheDataset(metaData)):
                     count += 1
-                    pp.pprint(metaData)
+                    print("Zenodo: " + str(count))
                 else:
-                    print("\n\nSkipping Dataset - No metadata present\n\n")
+                    print("\n\nSkipping Dataset - No metadata present [ Zenodo ] \n\n")
             
                 if(count == maxDatasets):
                     break

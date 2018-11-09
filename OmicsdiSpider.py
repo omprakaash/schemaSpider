@@ -1,8 +1,9 @@
 from Spider import *
 
 class OmicsdiSpider(Spider):
-    def __init__(self, baseUrl, delay, fileName):
-        super().__init__(baseUrl, delay, fileName)
+    def __init__(self, delay, fileName):
+        super().__init__(delay, fileName)
+        self.baseURL = "http://www.omicsdi.org"
     
     
     def crawl(self, maxDatasets):
@@ -26,14 +27,14 @@ class OmicsdiSpider(Spider):
             for dataset in datasetList:
                 datasetId = dataset['id']
                 datasetUrl = self.baseURL + "/dataset/arrayexpress-repository/" + datasetId
-                metaData = super().extract_metadata(datasetUrl)
-
+                metaData = self.extract_metadata(datasetUrl)
+                pp.pprint(metaData)
                 #adding dataset to hashMap
-                if(super().cacheDataset(metaData)):
-                    pp.pprint(metaData)
+                if(self.cacheDataset(metaData)):
+                    print( "Omiscdi" + str(count) )
                     count += 1
                 else:
-                    print("Skipping Dataset due to format error in Metadata/Metadata not present")
+                    print("Skipping Dataset due to format error in Metadata/Metadata not present [ Omiscdi ]")
 
                 if(count == maxDatasets):
                     break

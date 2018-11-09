@@ -12,8 +12,7 @@ pp = pprint.PrettyPrinter(indent=2)
 
 class Spider:
 
-    def __init__(self, baseUrl, delay, fileName):
-        self.baseURL = baseUrl
+    def __init__(self, delay, fileName):
         self.delay = delay
         self.datasets = dict()
         self.fileName = fileName
@@ -22,7 +21,6 @@ class Spider:
         r = requests.get(url)
         base_url = get_base_url(r.text, r.url)
         data = extruct.extract(r.text.encode('utf8'), base_url=base_url)
-        #print( data['json-ld'][0]['identifier'] )
         return(data)
 
     def crawl(self, max_pages):

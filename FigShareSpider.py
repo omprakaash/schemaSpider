@@ -1,8 +1,9 @@
 from Spider import *
 
 class FigShareSpider(Spider):
-    def __init__(self, baseUrl, delay,  fileName):
-        super().__init__(baseUrl, delay, fileName)
+    def __init__(self, delay,  fileName):
+        super().__init__(delay, fileName)
+        self.baseURL = "https://api.figshare.com/v2"
            
     def crawl(self, maxDatasets):
         # setting up tracking variables
@@ -18,7 +19,7 @@ class FigShareSpider(Spider):
             url = self.baseURL + "/articles" + "?page=" + str(curPage) + "&page_size=" + str(rowsPerPage) + "&item_type=3"
             response = requests.get(url)
             jsonData = response.json()
-            pp.pprint(jsonData)
+            #pp.pprint(jsonData)
 
             for dataSet in jsonData:
                 # Each dataSet is a dictionary 
@@ -29,6 +30,7 @@ class FigShareSpider(Spider):
                 self.datasets[doi] = metaData['json-ld'][0]
 
                 curCount += 1
+                print('Figshare: ' + str(curCount) )
                 if(curCount == maxDatasets):
                     break
 

@@ -1,11 +1,13 @@
 import ndjson as nj
 import json
+import sys
 
 
 # Script to format the data to match ElasticSearch BULk API input specification 
 def main():
 
-    with open('DryadData.json') as src:
+    fileName = sys.argv[1]
+    with open(fileName) as src:
         data = json.load(src)
 
     datasets = []
