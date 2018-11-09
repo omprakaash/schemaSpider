@@ -34,7 +34,7 @@ def main():
     harvardProcess = Process(target=harvardWorker)
     zenodoProcess = Process(target=zenodoWorker)
     dryadProcess = Process(target=dryadWorker)
-    FigShareProcess = Process(target=figShareWorker)
+    figShareProcess = Process(target=figShareWorker)
     omicsdiProcess = Process(target=omicsdiWorker)
 
     harvardProcess.start()
