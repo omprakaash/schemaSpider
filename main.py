@@ -31,22 +31,22 @@ def omicsdiWorker():
     spider.crawl(maxDatasets)
 
 def main():
-    # harvardProcess = Process(target=harvardWorker)
-    # zenodoProcess = Process(target=zenodoWorker)
-    # dryadProcess = Process(target=dryadWorker)
-    # figShareProcess = Process(target=figShareWorker)
+    harvardProcess = Process(target=harvardWorker)
+    zenodoProcess = Process(target=zenodoWorker)
+    dryadProcess = Process(target=dryadWorker)
+    FigShareProcess = Process(target=figShareWorker)
     omicsdiProcess = Process(target=omicsdiWorker)
 
-    # harvardProcess.start()
-    # zenodoProcess.start()
-    # dryadProcess.start()
-    # figShareProcess.start()
+    harvardProcess.start()
+    zenodoProcess.start()
+    dryadProcess.start()
+    figShareProcess.start()
     omicsdiProcess.start()
 
-    # harvardProcess.join()
-    # zenodoProcess.join()
-    # dryadProcess.join()
-    # figShareProcess.join()
+    harvardProcess.join()
+    zenodoProcess.join()
+    dryadProcess.join()
+    figShareProcess.join()
     omicsdiProcess.join()
 
 if __name__ == '__main__':
