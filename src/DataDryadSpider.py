@@ -30,11 +30,11 @@ class DataDryadSpider(Spider):
 
                 if( datasetURL != "http://datadryad.org/publicationBlackout" and urlPartList[-1].isdigit() == False):
                     metaData = self.extract_metadata(datasetURL)
+                    count += 1
                     if(self.cacheDataset(metaData, doi, self.dataStore)):
                         print('Dryad New Dataset Added : Total :' + str(count) )
                     else:
                         print("\n\n No metadata present [DataDryad] : Total : " + str(count) + "\n\n")
-                    count += 1
                     time.sleep(self.delay)
                 else:
                     print("Unpublished Dataset in Dryad " + datasetURL)

@@ -35,7 +35,7 @@ class HarvardSpider(Spider):
                 
                 #adding dataset to hashMap
                 if(self.cacheDataset(meta_data, doi, self.dataStore)):
-                    #pp.pprint(meta_data)
+                    pp.pprint(meta_data)
                     pass
                 else:
                     print("No metadata present [ Harvard ] ")

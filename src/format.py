@@ -6,8 +6,10 @@ import sys
 # Script to format the data to match ElasticSearch BULk API input specification 
 def main():
 
-    fileName = sys.argv[1]
-    with open(fileName) as src:
+    inputfile = sys.argv[1]
+    outputFile = sys.argv[2]
+
+    with open(inputfile) as src:
         data = json.load(src)
 
     datasets = []
@@ -20,7 +22,7 @@ def main():
         datasets.append(tempIdDict)
         datasets.append(data[row])
     
-    with open('out1.json','w') as out:
+    with open(outputFile,'w') as out:
         json.dump(datasets, out)
 
 if __name__=='__main__':
