@@ -7,8 +7,6 @@ from multiprocessing import Process
 
 import sys
 
-
-
 def harvardWorker(maxDatasets, delay):
     harvardSpiderDelay = 20
     spider = HarvardSpider(harvardSpiderDelay, "output/HarvardData.json")
@@ -40,9 +38,9 @@ def main():
     delay = int(sys.argv[2])
 
     #harvardProcess = Process(target=harvardWorker)
-    zenodoProcess = Process(target=zenodoWorker(maxDatasets, delay))
-    dryadProcess = Process(target=dryadWorker(maxDatasets, delay))
-    figShareProcess = Process(target=figShareWorker(maxDatasets, delay))
+    zenodoProcess = Process(target=zenodoWorker, args = (maxDatasets, delay,))
+    dryadProcess = Process(target=dryadWorker, args = (maxDatasets, delay,))
+    figShareProcess = Process(target=figShareWorker, args = (maxDatasets, delay,))
     #omicsdiProcess = Process(target=omicsdiWorker)
 
     #harvardProcess.start()

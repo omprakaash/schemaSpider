@@ -22,6 +22,10 @@ class FigShareSpider(Spider):
             jsonData = response.json()
             #pp.pprint(jsonData)
 
+            if 'code' in jsonData and (jsonData['code'] == "PaginationOffsetExceeded" or jsonData['code'] == "BadRequest"):
+                print("\nMax Reached\n")
+                break
+
             for dataSet in jsonData:
                 # Each dataSet is a dictionary 
 

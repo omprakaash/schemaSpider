@@ -20,6 +20,10 @@ class ZenodoSpider(Spider):
             response = requests.get(url)
             jsonData = response.json()
 
+            if "status" in jsonData and jsonData["status"] == 400: # All datasets in database already read
+                print("Max Reached")
+                break
+
             datasetList = jsonData['hits']['hits']
 
             for dataset in datasetList:

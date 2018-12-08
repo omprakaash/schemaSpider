@@ -8,17 +8,21 @@ class DataDryadSpider(Spider):
 
     def crawl(self, maxDatasets):
 
-        curPage = 40
+        curPage = 1
         datasetsPerPage = 100
         count = 0
 
-        while count < maxDatasets:
+        res = requests.get(self.baseURL + "/works?page[size]=" + str(datasetsPerPage) + "&page[number]=" + str(1) + "&data-center-id=dryad.dryad")
+        maxPages = res.json()["meta"]["total-pages"] # Max Pages in DataStore
 
-            url = self.baseURL + "/works?page[size]=" + str(datasetsPerPage) + "&page[number]=" + str(curPage) + "&data-center-id=dryad.dryad&"
+        while count < maxDatasets and curPage < maxPages:
+
+            url = self.baseURL + "/works?page[size]=" + str(datasetsPerPage) + "&page[number]=" + str(curPage) + "&data-center-id=dryad.dryad"
             response = requests.get(url)
             jsonData = response.json()
 
             datasetList = jsonData["data"]
+            maxPages = jsonData["meta"]["total-pages"]
 
             for dataset in datasetList:
 
